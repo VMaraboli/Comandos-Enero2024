@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+    <link rel="stylesheet" src="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Bienvenido</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="">
+                <img src="static/img/Rose.png" alt="Rose">
+            </a>
+            <h3 class="nombre-empresa">Centro Rose</h3>
+        </div>
+        <nav >
+            <a href="/login">Iniciar sesión</a>
+            <a href="/registro">Registrarme</a>
+        </nav>
+    </header>
+    
+        <!--Slide-->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="static/img/slide-1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="static/img/slide-2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="static/img/slide-3.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    
+    <div class="container-index">   
+        <div class="index">
+            <img src="static/img/imagen-4.jpg" alt="image">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, voluptatibus minus totam optio ex blanditiis, quas perspiciatis voluptatum illo animi natus harum quae reiciendis exercitationem aut dolore nulla officiis perferendis!</p>
+        </div>
+        <div class="index">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius rerum incidunt aliquid iste saepe non maiores! Consequatur nostrum sequi delectus quas quia minus nemo corrupti, quisquam illo dicta pariatur facilis.</p>
+            
+            <img src="static/img/imagen-1.jpg" alt="image">
+        </div>
+        <div class="index-p">   
+            <strong>¡Te invitamos a agendar tu hora! Para hacerlo solo debes iniciar sesión. Si no tienes una cuenta puedes registrarte. ¡Es fácil y rápido!</strong>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright © 2024 HubSpot, Inc.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

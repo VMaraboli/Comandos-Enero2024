@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+    <link rel="stylesheet" src="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Agregar cita</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="">
+                <img src="static/img/Rose.png" alt="Rose">
+            </a>
+            <h3 class="nombre-empresa">Centro Rose</h3>
+        </div>
+        <nav>
+            <a href="/dashboard_estilista">Volver</a>
+            <a href="/logout">Cerrar sesión</a>
+        </nav>
+    </header>
+    <div class="container-agregar-principal">
+        <!-- MENSAJES DE ERROR -->
+        {% with messages = get_flashed_messages(category_filter=['cita']) %}
+            {% if messages %}
+                <div class="alert alert-danger">
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <!-- FORMULARIO -->
+        <div class="container-agregar">
+            <h1>Agregar nueva cita</h1>
+            <form action="/create/cita" method="post">
+                <div>
+                    <label><strong>Seleccione un servicio:</strong></label>
+                    <select name="servicio_id" class="form-select">
+                        {% for s in serv%}
+                        <option value="{{s.id}}">{{s.nombre_servicio}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <p><em> *Recuerda que solo trabajamos de lunes a viernes de 10:00 a 18:00</em></p>
+                    <label><strong>Selecciones una fecha:</strong></label>                   
+                    <input type="date" name="fecha" class="form-control" >
+                </div>
+                <div>
+                    <label><strong>Selecciona el horario</strong></label>
+                    <p><em></em></p>
+                    <select name="hora" class="form-select">
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                    </select>
+                </div>
+                <input type="hidden" name="estado" value="pendiente">
+                <input type="hidden" name="user_id" value ="{{user.id}}">
+            <div class="container-agregar-button">
+                <a href="/dashboard_cliente" class="btn btn-danger mt-3">Cancelar</a>
+                <input type="submit" class="btn btn-success mt-3" value="Agregar">
+            </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright © 2024 HubSpot, Inc.</p>
+    </footer>
+</body>
+</html>
